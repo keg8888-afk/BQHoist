@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ООО «ВИРА» — Каталог подъёмного оборудования 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:#f4f7fb;color:#22303f;line-height:1.55}
+body.lock{overflow:hidden}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:rgba(14,42,71,.97);backdrop-filter:blur(6px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.top{display:flex;align-items:center;gap:16px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:800;color:#fff;line-height:1.1}
+.logo b{color:#ff7a1a}
+.logo span{display:block;font-size:11px;font-weight:400;color:#bcd0e4}
+nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+nav a{color:#dbe7f4;text-decoration:none;font-size:13px;padding:6px 10px;border-radius:8px;white-space:nowrap}
+nav a:hover{background:#15528f;color:#fff}
+.hero{background:linear-gradient(135deg,#0e2a47 0%,#15528f 70%,#1b6ab0 100%);color:#fff;padding:70px 0 60px;position:relative;overflow:hidden}
+.hero:after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 34px,rgba(255,255,255,.05) 34px 68px)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-block;background:#ff7a1a;color:#fff;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+h1{font-size:clamp(28px,4.5vw,46px);line-height:1.15;margin-bottom:14px;max-width:900px}
+.hero p.lead{max-width:820px;color:#dce8f5;font-size:16px}
+.hero p.lead b{color:#ffb067}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 24px}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 22px;min-width:160px}
+.stat b{display:block;font-size:26px;color:#ffb067}
+.stat span{font-size:12px;color:#cfe0f2}
+.hero-contacts{display:flex;gap:12px;flex-wrap:wrap}
+.hero-contacts a{display:inline-block;background:#fff;color:#0e2a47;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:10px;font-size:15px;transition:.2s}
+.hero-contacts a:hover{background:#ffb067}
+.section{padding:56px 0}
+.section.alt{background:#fff}
+h2{font-size:clamp(22px,3vw,30px);color:#0e2a47;margin-bottom:6px}
+h2:before{content:'';display:inline-block;width:10px;height:26px;background:#ff7a1a;border-radius:3px;margin-right:12px;vertical-align:-3px}
+.cat-sub{color:#6b7a8c;font-size:14px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.card{position:relative;background:#fff;border:1px solid #dbe4ee;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 16px rgba(14,42,71,.06);transition:.25s}
+.section.alt .card{background:#fbfdff}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(14,42,71,.15)}
+.schema{background:#f8fafc;border:1px solid #e5edf5;border-radius:12px;padding:8px}
+.schema svg{width:100%;height:150px;display:block}
+.card h3{color:#0e2a47;font-size:19px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:#eaf2fb;color:#15528f;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px}
+.btn{margin-top:auto;background:linear-gradient(90deg,#ff7a1a,#ff9a4d);border:none;color:#fff;font-weight:700;font-size:14px;padding:12px 16px;border-radius:10px;cursor:pointer;transition:.2s}
+.btn:hover{filter:brightness(1.08);box-shadow:0 6px 14px rgba(255,122,26,.35)}
+.rec{position:absolute;top:10px;right:10px;background:#15528f;color:#fff;font-size:11px;padding:4px 10px;border-radius:999px;z-index:2}
+.overlay{position:fixed;inset:0;background:rgba(8,18,32,.62);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;max-width:700px;width:100%;max-height:86vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);animation:pop .25s}
+@keyframes pop{from{transform:scale(.94);opacity:0}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:#0e2a47;color:#fff}
+.modal-head h3{font-size:20px}
+.x{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;padding:4px 8px;line-height:1}
+.x:hover{color:#ffb067}
+.modal-body{padding:20px 22px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:8px}
+th,td{border:1px solid #dbe4ee;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f0f5fb;color:#0e2a47;width:46%}
+.modal-body h4{margin:14px 0 8px;color:#15528f}
+.contacts{background:#0e2a47;color:#fff;padding:56px 0}
+.contacts h2{color:#fff}
+.c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+.c-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:22px;border-radius:14px}
+.c-card b{color:#ffb067;display:block;margin-bottom:6px}
+.c-card a{color:#fff;text-decoration:none;font-size:17px;font-weight:600}
+.c-card a:hover{color:#ffb067}
+footer{background:#081a2e;color:#9fb4ca;padding:20px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="logo"><b>ВИРА</b> · BAOQUAN<span>официальный представитель · каталог 2026</span></div>
+    <nav>
+      <a href="#sc">Строительные SC</a>
+      <a href="#ish">Промышленные ISH</a>
+      <a href="#mc65">Мачтовые MC 650</a>
+      <a href="#trans">Транспортные MC</a>
+      <a href="#unload">Разгрузочные XDLP</a>
+      <a href="#zlp">Подвесные ZLP</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Каталог 2026 · Shenyang Baoquan</span>
+    <h1>Строительные подъёмники, мачтовые и подвесные платформы</h1>
+    <p class="lead">Проектирование по стандарту EN 12159:2012, EN 1495, EN 16719. Сертификация: CE, EAC, TUV, DOSH, SASO. Приводы SEW/Nord, электрика Siemens/Schneider. Официальный представитель — <b>ООО «ВИРА»</b>.</p>
+    <div class="stats">
+      <div class="stat"><b>550 м</b><span>макс. высота подъёма</span></div>
+      <div class="stat"><b>10 т</b><span>макс. грузоподъёмность</span></div>
+      <div class="stat"><b>120 м/мин</b><span>макс. скорость подъёма</span></div>
+    </div>
+    <div class="hero-contacts">
+      <a href="tel:+74232564721">📞 +7 (423) 256-47-21</a>
+      <a href="mailto:virare@mail.ru">✉ virare@mail.ru</a>
+    </div>
+  </div>
+</section>
+
+<main id="catalog"></main>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <h2>Контакты официального представителя</h2>
+    <div class="c-grid">
+      <div class="c-card"><b>Компания</b>ООО «ВИРА»<br>Официальный представитель Shenyang Baoquan</div>
+      <div class="c-card"><b>Телефон</b><a href="tel:+74232564721">+7 (423) 256-47-21</a></div>
+      <div class="c-card"><b>E-mail</b><a href="mailto:virare@mail.ru">virare@mail.ru</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ООО «ВИРА». Все права защищены.</span>
+    <span>Оборудование Shenyang Baoquan · тел.: +7 (423) 256-47-21 · virare@mail.ru</span>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-head"><h3 id="mTitle"></h3><button class="x" id="mClose" title="Закрыть">✕</button></div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+/* ---------- Схематичные чертежи (SVG) ---------- */
+function lattice(x,y1,y2,w){var s='';for(var y=y1;y<y2;y+=14){s+='<line x1="'+x+'" y1="'+y+'" x2="'+(x+w)+'" y2="'+y+'"/><line x1="'+x+'" y1="'+y+'" x2="'+(x+w)+'" y2="'+Math.min(y+14,y2)+'"/>';}return s;}
+function svgHoist(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/><rect x="152" y="24" width="60" height="123" fill="#e8eef6"/><line x1="152" y1="55" x2="212" y2="55"/><line x1="152" y1="86" x2="212" y2="86"/><line x1="152" y1="117" x2="212" y2="117"/><line x1="84" y1="40" x2="152" y2="40"/><line x1="84" y1="76" x2="152" y2="76"/><line x1="84" y1="112" x2="152" y2="112"/>'+lattice(70,22,146,14)+'<line x1="70" y1="22" x2="70" y2="146"/><line x1="84" y1="22" x2="84" y2="146"/><rect x="62" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="90" y="88" width="46" height="54"/><line x1="90" y1="88" x2="136" y2="142"/><rect x="94" y="76" width="14" height="12" fill="#ffd9b8"/><rect x="112" y="76" width="14" height="12" fill="#ffd9b8"/></g></svg>';}
+function svgInd(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/><rect x="20" y="20" width="52" height="127" fill="#e8eef6"/><line x1="20" y1="52" x2="72" y2="52"/><line x1="20" y1="84" x2="72" y2="84"/><line x1="20" y1="116" x2="72" y2="116"/><line x1="72" y1="44" x2="120" y2="44"/><line x1="72" y1="80" x2="120" y2="80"/><line x1="72" y1="116" x2="120" y2="116"/>'+lattice(120,20,146,14)+'<line x1="120" y1="20" x2="120" y2="146"/><line x1="134" y1="20" x2="134" y2="146"/><rect x="112" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="76" y="86" width="40" height="56"/><rect x="84" y="94" width="24" height="14" fill="#ffd9b8"/><rect x="80" y="74" width="12" height="12" fill="#ffd9b8"/><rect x="98" y="74" width="12" height="12" fill="#ffd9b8"/></g></svg>';}
+function svgMast(){var r='';for(var x=42;x<=178;x+=17){r+='<line x1="'+x+'" y1="52" x2="'+x+'" y2="70"/>';}return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/>'+lattice(103,18,146,14)+'<line x1="103" y1="18" x2="103" y2="146"/><line x1="117" y1="18" x2="117" y2="146"/><rect x="95" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="38" y="70" width="144" height="10" fill="#ffd9b8"/>'+r+'<line x1="40" y1="52" x2="180" y2="52"/><rect x="96" y="80" width="28" height="14" fill="#ffd9b8"/></g></svg>';}
+function svgTrans(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/>'+lattice(46,20,146,14)+'<line x1="46" y1="20" x2="46" y2="146"/><line x1="60" y1="20" x2="60" y2="146"/><rect x="38" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="66" y="66" width="104" height="76"/><line x1="66" y1="80" x2="170" y2="80"/><line x1="118" y1="80" x2="118" y2="142"/><rect x="72" y="54" width="16" height="12" fill="#ffd9b8"/><rect x="94" y="54" width="16" height="12" fill="#ffd9b8"/></g></svg>';}
+function svgUnload(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><rect x="18" y="16" width="72" height="131" fill="#e8eef6"/><line x1="18" y1="60" x2="90" y2="60"/><line x1="18" y1="100" x2="90" y2="100"/><line x1="18" y1="140" x2="90" y2="140"/><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="90" y="92" width="104" height="8" fill="#ffd9b8"/><line x1="186" y1="66" x2="186" y2="92"/><line x1="168" y1="66" x2="168" y2="92"/><line x1="150" y1="66" x2="150" y2="92"/><line x1="148" y1="66" x2="190" y2="66"/><line x1="170" y1="100" x2="170" y2="140"/><line x1="160" y1="140" x2="180" y2="140"/></g></svg>';}
+function svgSusp(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><rect x="58" y="34" width="104" height="113" fill="#e8eef6"/><line x1="58" y1="70" x2="162" y2="70"/><line x1="58" y1="108" x2="162" y2="108"/><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/><line x1="66" y1="34" x2="154" y2="34" stroke-width="3"/><rect x="140" y="22" width="20" height="12" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><line x1="88" y1="34" x2="88" y2="96"/><line x1="132" y1="34" x2="132" y2="96"/><rect x="74" y="96" width="72" height="8" fill="#ffd9b8"/><line x1="76" y1="80" x2="144" y2="80"/><line x1="76" y1="80" x2="76" y2="96"/><line x1="110" y1="80" x2="110" y2="96"/><line x1="144" y1="80" x2="144" y2="96"/></g></svg>';}
+function schemaSVG(t){return {hoist:svgHoist,ind:svgInd,mast:svgMast,trans:svgTrans,unload:svgUnload,susp:svgSusp}[t]();}
+
+/* ---------- Данные каталога (строго из файла производителя) ---------- */
+var SC=function(m,rec,load,speed,height,drive,safety,ctrl){return {m:m,rec:rec,load:load,speed:speed,height:height,drive:drive,safety:safety,ctrl:ctrl};};
+var DATA=[
+{kind:'sc',id:'sc',schema:'hoist',title:'Строительные подъёмники серии SC',subtitle:'Стандарт: EN 12159:2012 · Сертификация: CE, EAC, TX, TUV, DOSH, SASO · Редукторы: SEW, Nord · Электрика: Siemens, Schneider · Кабина (стандарт): 3,0×1,5×2,2 м',
+common:[['Стандарт проектирования','EN 12159:2012'],['Сертификация','CE, EAC, TX, TUV, DOSH, SASO'],['Внутренние размеры кабины (стандарт)','3,0 × 1,5 × 2,2 м (спец. размеры — под заказ)'],['Материалы стен кабины','Сетка, перфорированный лист, алюминий, нержавеющая сталь'],['Редукторы привода','SEW, Nord'],['Электрокомпоненты','Siemens, Schneider']],
+models:[
+SC('SC100 / SC100/100',0,'1000','33','150','2×11 кВт / 50 Гц','SAJ30-1.2','PLC DOL (прямой пуск)'),
+SC('SC100L / SC100/100L',1,'1000','36','250','2×11 кВт / 60 Гц','SAJ30-1.2','VFD 30 кВт (частотное управление)'),
+SC('SC100M / SC100/100M',0,'1000','60','350','2×15–19 кВт / 87 Гц','SAJ30-1.4','VFD 37 кВт'),
+SC('SC100H / SC100/100H',0,'1000','75','450','2×23 кВт / 87 Гц','SAJ40-2.0','VFD 55 кВт'),
+SC('SC100SH / SC100/100SH',0,'1000','96','550','2×32 кВт / 87 Гц','SAJ40-2.0','VFD 75 кВт'),
+SC('SC200 / SC200/200',0,'2000','33','150','3×11 кВт / 50 Гц','SAJ40-1.2','PLC DOL (прямой пуск)'),
+SC('SC200LA / SC200/200LA',1,'2000','36','250','2×13 кВт / 60 Гц','SAJ40-1.2','VFD 30 кВт'),
+SC('SC200LB / SC200/200LB',1,'2000','45','250','2×15 кВт / 60 Гц','SAJ40-1.2','VFD 37 кВт'),
+SC('SC200MA / SC200/200MA',0,'2000','54','250','2×19 кВт / 87 Гц','SAJ40-1.4','VFD 45 кВт'),
+SC('SC200MB / SC200/200MB',0,'2000','60','250','2×23 кВт / 87 Гц','SAJ40-1.4','VFD 55 кВт'),
+SC('SC200MC / SC200/200MC',1,'2000','63','350','3×15 кВт / 87 Гц','SAJ40-1.4','VFD 55 кВт'),
+SC('SC200H / SC200/200H',0,'2000','75','450','3×19–23 кВт / 87 Гц','SAJ50-2.0','VFD 75–90 кВт'),
+SC('SC200SH / SC200/200SH',0,'2000','96','550','3×26–32 кВт / 87 Гц','SAJ50-2.0','VFD 90–110 кВт'),
+SC('SC300LA / SC300/300LA',0,'3000','36','250','3×11 кВт / 60 Гц','SAJ50-1.2','VFD 37 кВт'),
+SC('SC300LB / SC300/300LB',1,'3000','48','250','3×15 кВт / 87 Гц','SAJ50-1.2','VFD 55 кВт'),
+SC('SC300M / SC300/300M',0,'3000','60','350','3×19–23 кВт / 87 Гц','SAJ50-1.4','VFD 75–90 кВт'),
+SC('SC300H / SC300/300H',0,'3000','75','450','3×26–32 кВт / 87 Гц','SAJ50-2.0','VFD 90–110 кВт')]},
+{kind:'ish',id:'ish',schema:'ind',title:'Промышленные подъёмники серии SC-ISH',subtitle:'Для особых условий: низкие температуры, влажность, жара, пыль, взрывозащита · Стандарты: EN 12159:2012, EN 81-20, EN 81-43',
+common:[['Стандарты','EN 12159:2012, EN 81-20, EN 81-43'],['Секции мачты','450×450, 650×200, 650×650 мм'],['Температура эксплуатации','−40…+50 °C'],['Взрывозащита (опция)','EX IIC T4'],['Интеллектуальное управление','Автоматическое выравнивание и поэтажная система'],['Пожарная защита','Кнопка возврата, огнетушитель, пожарная сигнализация'],['Связь','IP-телефония, локальная сеть, IoT']],
+models:[
+{m:'SC 50-ISH',load:'500 кг',speed:'30 м/мин',height:'250 м',car:'1,2×1,0 м',motor:'13 кВт'},
+{m:'SC 100-ISH',load:'1000 кг',speed:'30 м/мин',height:'250 м',car:'1,7×1,3 м',motor:'2×11 кВт'},
+{m:'SC 200-ISH',load:'2000 кг',speed:'30 м/мин',height:'250 м',car:'2,5×1,5 м',motor:'2×15 кВт'},
+{m:'SC***-ISH (спец. исполнение)',load:'300–3000 кг',speed:'0–90 м/мин',height:'550 м',car:'до 3,2×1,5 м',motor:'под заказ'}]},
+{kind:'mc65',id:'mc65',schema:'mast',title:'Мачтовые подъёмные рабочие платформы MC 650',subtitle:'Стандарт: EN 1495:1997-A2:2009 · Сертификация: CE, EAC, DOSH · Длина платформы до 32,2 м · Нагрузка до 5000 кг',
+common:[['Стандарт','EN 1495:1997-A2:2009'],['Сертификация','CE, EAC, DOSH'],['Макс. высота подъёма','200 м'],['Макс. независимая высота','9 м'],['Вылет консоли','4,5 м'],['Расстояние до креплений','4,5–7,5 м'],['Направляющая кабеля','6 м'],['Мачта','650 мм (0,65×0,65×1,508 м)'],['Модуль рейки','8'],['Электропитание','380–436 В, 50–60 Гц']],
+models:[
+{m:'MC 65 S (одномачтовая)',specs:[['Длина платформы','3,0–10,4 м'],['Ширина платформы','1,5–2,7 м'],['Грузоподъёмность','2000–3500 кг'],['Скорость (50/60 Гц)','8 / 9,6 м/мин'],['Привод','2×4 кВт']]},
+{m:'MC 65 T (двухмачтовая)',specs:[['Длина платформы','10,3–30,6 м'],['Ширина платформы','1,5–2,7 м'],['Грузоподъёмность','3500–5000 кг'],['Скорость (50/60 Гц)','8 / 9,6 м/мин'],['Привод','2×2×4 кВт']]}]},
+{kind:'trans',id:'trans',schema:'trans',title:'Транспортные платформы серии MC',subtitle:'Стандарт: EN 16719:2017 · Сертификация: CE, EAC, DOSH · Перевозка людей и материалов · До 5000 кг',
+common:[['Стандарт','EN 16719:2017'],['Сертификация','CE, EAC, DOSH'],['Скорость','24 м/мин'],['Макс. высота установки','150 м'],['Высота кабины','1200 мм'],['Температура эксплуатации','−40…+50 °C'],['Крыша','Съёмная (для уличного применения и сыпучих грузов)']],
+models:[
+{m:'MC S 50',load:'500',cage:'1200×1500×1200',motor:'2×4',mast:'450×450'},
+{m:'MC S 100',load:'1000',cage:'1400×2200×1200',motor:'2×7,5',mast:'450×450'},
+{m:'MC S 200',load:'2000',cage:'1500×3000×1200',motor:'2×9,2',mast:'650×650'},
+{m:'MC T 300',load:'3000',cage:'3000×5000×1200',motor:'4×11',mast:'2×650×650'},
+{m:'MC T 500',load:'5000',cage:'3000×5000×1200',motor:'6×11',mast:'2×650×650'}]},
+{kind:'unload',id:'unload',schema:'unload',title:'Разгрузочные платформы XDLP / XDHP',subtitle:'Независимое вспомогательное оборудование для перемещения сыпучих материалов и оборудования между этажами · Нагрузка до 5000 кг',
+common:[['Монтажная длина','5500 мм'],['Высота монтажного пространства','2400–3800 мм (мод. 22–32) / 2400–3300 мм (мод. 36–42)'],['Боковые панели','Оцинкованный лист с окраской'],['Рама','Покраска или цинкование'],['Крепление','Опорными стойками или анкерами к перекрытию']],
+models:[
+{m:'XDLP 22 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'2180',w2:'1650',ah:'400',wt:'2,0'},
+{m:'XDLP 28 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'2580',w2:'2050',ah:'400',wt:'2,2'},
+{m:'XDLP 32 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'3180',w2:'2650',ah:'400',wt:'2,5'},
+{m:'XDLP 36 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'3580',w2:'3030',ah:'500',wt:'3,0'},
+{m:'XDLP 42 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'4180',w2:'3630',ah:'500',wt:'3,2'},
+{m:'XDHP 22 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'2180',w2:'1650',ah:'500',wt:'2,3'},
+{m:'XDHP 28 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'2580',w2:'2050',ah:'500',wt:'2,5'},
+{m:'XDHP 32 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'3180',w2:'2650',ah:'500',wt:'2,8'},
+{m:'XDHP 36 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'3580',w2:'3030',ah:'550',wt:'3,2'},
+{m:'XDHP 42 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'4180',w2:'3630',ah:'550',wt:'3,6'}]},
+{kind:'zlp',id:'zlp',schema:'susp',title:'Подвесные платформы серии ZLP',subtitle:'Для фасадных работ, очистки, окраски, монтажа, инспекции мостов, резервуаров и труб · Замена традиционных лесов',
+common:[['Материалы','Сталь с порошковой окраской / горячее цинкование / алюминиевый сплав'],['Подвесная система','Регулируемая / парапетные зажимы'],['Расстояние регулировки','A: 1,3–1,7 м / R: 0,6–1,2 м'],['Макс. высота подъёма','150 м'],['Электропитание','220/380/440 В, 50–60 Гц, 3 фазы / 1 фаза'],['Устройства безопасности','Аварийный стоп, ограничение скорости, защита от обрыва троса и перекоса, верхний ограничитель, ручной спуск']],
+models:[
+{m:'ZLP500',specs:[['Номинальная нагрузка','500 кг'],['Размер платформы','5×0,69×1,12 м'],['Скорость подъёма','9,3 м/мин'],['Мощность двигателя','2×1,5 кВт'],['Тип подъёмника','LTD6.3'],['Диаметр троса','8,3 мм'],['Противовес','800 кг'],['Замок безопасности','LDF30'],['Кабель','4×1,5+1×1,0 мм²']]},
+{m:'ZLP630',specs:[['Номинальная нагрузка','630 кг'],['Размер платформы','6×0,69×1,12 м'],['Скорость подъёма','9,3 м/мин'],['Мощность двигателя','2×1,5 кВт'],['Тип подъёмника','LTD6.3'],['Диаметр троса','8,3 мм'],['Противовес','1000 кг'],['Замок безопасности','LDF30'],['Кабель','4×1,5+1×1,0 мм²']]},
+{m:'ZLP800',specs:[['Номинальная нагрузка','800 кг'],['Размер платформы','7,5×0,69×1,12 м'],['Скорость подъёма','8,6 м/мин'],['Мощность двигателя','2×1,8 кВт'],['Тип подъёмника','LTD8.0'],['Диаметр троса','8,6 мм'],['Противовес','1000 кг'],['Замок безопасности','LDF30'],['Кабель','3×2,0+2×1,5 мм²']]},
+{m:'ZLP1000',specs:[['Номинальная нагрузка','1000 кг'],['Размер платформы','7,5×0,69×1,12 м'],['Скорость подъёма','8,6 м/мин'],['Мощность двигателя','2×2,2 кВт'],['Тип подъёмника','LTD8.0'],['Диаметр троса','9,1 мм'],['Противовес','1300 кг'],['Замок безопасности','LDF30'],['Кабель','3×2,5+2×1,5 мм²']]}]}
+];
+
+/* ---------- Рендер каталога ---------- */
+function getChips(cat,mo){
+  switch(cat.kind){
+    case 'sc': return [mo.load+' кг', mo.speed+' м/мин', mo.height+' м'];
+    case 'ish': return [mo.load, mo.speed, mo.height];
+    case 'mc65': return mo.specs.filter(function(p){return /Груз|Скор/.test(p[0]);}).map(function(p){return p[1];}).concat(['200 м']);
+    case 'trans': return [mo.load+' кг','24 м/мин','150 м'];
+    case 'unload': return [mo.load,'W1 '+mo.w1+' мм',mo.wt+' т'];
+    case 'zlp': return [mo.specs[0][1], mo.specs[2][1], '150 м'];
+  }
+}
+function buildSpecs(cat,mo){
+  switch(cat.kind){
+    case 'sc': return [['Модель (одна / две кабины)',mo.m],['Грузоподъёмность кабины',mo.load+' кг'],['Макс. скорость',mo.speed+' м/мин'],['Макс. высота подъёма',mo.height+' м'],['Приводной агрегат',mo.drive],['Предохранительное устройство',mo.safety],['Система управления',mo.ctrl]];
+    case 'ish': return [['Грузоподъёмность',mo.load],['Скорость',mo.speed],['Макс. высота установки',mo.height],['Размер кабины',mo.car],['Мощность двигателя',mo.motor]];
+    case 'trans': return [['Грузоподъёмность',mo.load+' кг'],['Скорость','24 м/мин'],['Макс. высота установки','150 м'],['Кабина (Ш×Д×В)',mo.cage+' мм'],['Мощность двигателя',mo.motor+' кВт'],['Мачта',mo.mast+' мм']];
+    default: return mo.specs;
+  }
+}
+var root=document.getElementById('catalog');
+DATA.forEach(function(cat,ci){
+  var sec=document.createElement('section');
+  sec.className='section'+(ci%2===1?' alt':'');
+  sec.id=cat.id;
+  var cards=cat.models.map(function(mo,mi){
+    return '<article class="card">'+(mo.rec?'<span class="rec">★ Рекомендуемая модель</span>':'')+
+    '<div class="schema">'+schemaSVG(cat.schema)+'</div>'+
+    '<h3>'+mo.m+'</h3>'+
+    '<div class="chips">'+getChips(cat,mo).map(function(c){return '<span class="chip">'+c+'</span>';}).join('')+'</div>'+
+    '<button class="btn spec-btn" data-c="'+ci+'" data-m="'+mi+'">Технические характеристики</button>'+
+    '</article>';
+  }).join('');
+  sec.innerHTML='<div class="wrap"><h2>'+cat.title+'</h2><p class="cat-sub">'+cat.subtitle+'</p><div class="grid">'+cards+'</div></div>';
+  root.appendChild(sec);
+});
+
+/* ---------- Модальное окно ---------- */
+var overlay=document.getElementById('overlay'),mTitle=document.getElementById('mTitle'),mBody=document.getElementById('mBody');
+function rows(p){return p.map(function(r){return '<tr><th>'+r[0]+'</th><td>'+r[1]+'</td></tr>';}).join('');}
+function openModal(ci,mi){
+  var cat=DATA[ci],mo=cat.models[mi];
+  mTitle.textContent=mo.m;
+  var html='<table>'+rows(buildSpecs(cat,mo))+'</table>';
+  if(cat.common){html+='<h4>Общие характеристики серии</h4><table>'+rows(cat.common)+'</table>';}
+  mBody.innerHTML=html;
+  overlay.classList.add('open');
+  document.body.classList.add('lock');
+}
+function closeModal(){overlay.classList.remove('open');document.body.classList.remove('lock');}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.spec-btn');
+  if(b){openModal(+b.getAttribute('data-c'),+b.getAttribute('data-m'));}
+});
+document.getElementById('mClose').addEventListener('click',closeModal);
+overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
