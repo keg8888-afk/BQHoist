@@ -137,7 +137,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <script>
 /* ---------- Схематичные чертежи (SVG) ---------- */
 function lattice(x,y1,y2,w){var s='';for(var y=y1;y<y2;y+=14){s+='<line x1="'+x+'" y1="'+y+'" x2="'+(x+w)+'" y2="'+y+'"/><line x1="'+x+'" y1="'+y+'" x2="'+(x+w)+'" y2="'+Math.min(y+14,y2)+'"/>';}return s;}
-function svgHoist(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/><rect x="152" y="24" width="60" height="123" fill="#e8eef6"/><line x1="152" y1="55" x2="212" y2="55"/><line x1="152" y1="86" x2="212" y2="86"/><line x1="152" y1="117" x2="212" y2="117"/><line x1="84" y1="40" x2="152" y2="40"/><line x1="84" y1="76" x2="152" y2="76"/><line x1="84" y1="112" x2="152" y2="112"/>'+lattice(70,22,146,14)+'<line x1="70" y1="22" x2="70" y2="146"/><line x1="84" y1="22" x2="84" y2="146"/><rect x="62" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="90" y="88" width="46" height="54"/><line x1="90" y1="88" x2="136" y2="142"/><rect x="94" y="76" width="14" height="12" fill="#ffd9b8"/><rect x="112" y="76" width="14" height="12" fill="#ffd9b8"/></g></svg>';}
+function svgHoist(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/><rect x="152" y1="24" y="24" width="60" height="123" fill="#e8eef6"/><line x1="152" y1="55" x2="212" y2="55"/><line x1="152" y1="86" x2="212" y2="86"/><line x1="152" y1="117" x2="212" y2="117"/><line x1="84" y1="40" x2="152" y2="40"/><line x1="84" y1="76" x2="152" y2="76"/><line x1="84" y1="112" x2="152" y2="112"/>'+lattice(70,22,146,14)+'<line x1="70" y1="22" x2="70" y2="146"/><line x1="84" y1="22" x2="84" y2="146"/><rect x="62" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="90" y="88" width="46" height="54"/><line x1="90" y1="88" x2="136" y2="142"/><rect x="94" y="76" width="14" height="12" fill="#ffd9b8"/><rect x="112" y="76" width="14" height="12" fill="#ffd9b8"/></g></svg>';}
 function svgInd(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/><rect x="20" y="20" width="52" height="127" fill="#e8eef6"/><line x1="20" y1="52" x2="72" y2="52"/><line x1="20" y1="84" x2="72" y2="84"/><line x1="20" y1="116" x2="72" y2="116"/><line x1="72" y1="44" x2="120" y2="44"/><line x1="72" y1="80" x2="120" y2="80"/><line x1="72" y1="116" x2="120" y2="116"/>'+lattice(120,20,146,14)+'<line x1="120" y1="20" x2="120" y2="146"/><line x1="134" y1="20" x2="134" y2="146"/><rect x="112" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="76" y="86" width="40" height="56"/><rect x="84" y="94" width="24" height="14" fill="#ffd9b8"/><rect x="80" y="74" width="12" height="12" fill="#ffd9b8"/><rect x="98" y="74" width="12" height="12" fill="#ffd9b8"/></g></svg>';}
 function svgMast(){var r='';for(var x=42;x<=178;x+=17){r+='<line x1="'+x+'" y1="52" x2="'+x+'" y2="70"/>';}return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/>'+lattice(103,18,146,14)+'<line x1="103" y1="18" x2="103" y2="146"/><line x1="117" y1="18" x2="117" y2="146"/><rect x="95" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="38" y="70" width="144" height="10" fill="#ffd9b8"/>'+r+'<line x1="40" y1="52" x2="180" y2="52"/><rect x="96" y="80" width="28" height="14" fill="#ffd9b8"/></g></svg>';}
 function svgTrans(){return '<svg viewBox="0 0 220 160"><g stroke="#14406b" stroke-width="2" fill="none"><line x1="6" y1="147" x2="214" y2="147" stroke-width="3"/>'+lattice(46,20,146,14)+'<line x1="46" y1="20" x2="46" y2="146"/><line x1="60" y1="20" x2="60" y2="146"/><rect x="38" y="141" width="30" height="6" fill="#14406b"/></g><g stroke="#ff7a1a" stroke-width="2.4" fill="#fff"><rect x="66" y="66" width="104" height="76"/><line x1="66" y1="80" x2="170" y2="80"/><line x1="118" y1="80" x2="118" y2="142"/><rect x="72" y="54" width="16" height="12" fill="#ffd9b8"/><rect x="94" y="54" width="16" height="12" fill="#ffd9b8"/></g></svg>';}
@@ -147,6 +147,7 @@ function schemaSVG(t){return {hoist:svgHoist,ind:svgInd,mast:svgMast,trans:svgTr
 
 /* ---------- Данные каталога (строго из файла производителя) ---------- */
 var SC=function(m,rec,load,speed,height,drive,safety,ctrl){return {m:m,rec:rec,load:load,speed:speed,height:height,drive:drive,safety:safety,ctrl:ctrl};};
+var U=function(m,type,load,w1,w2,w3,w4,instH,ah,wt){return {m:m,type:type,load:load,w1:w1,w2:w2,w3:w3,w4:w4,instH:instH,ah:ah,wt:wt};};
 var DATA=[
 {kind:'sc',id:'sc',schema:'hoist',title:'Строительные подъёмники серии SC',subtitle:'Стандарт: EN 12159:2012 · Сертификация: CE, EAC, TX, TUV, DOSH, SASO · Редукторы: SEW, Nord · Электрика: Siemens, Schneider · Кабина (стандарт): 3,0×1,5×2,2 м',
 common:[['Стандарт проектирования','EN 12159:2012'],['Сертификация','CE, EAC, TX, TUV, DOSH, SASO'],['Внутренние размеры кабины (стандарт)','3,0 × 1,5 × 2,2 м (спец. размеры — под заказ)'],['Материалы стен кабины','Сетка, перфорированный лист, алюминий, нержавеющая сталь'],['Редукторы привода','SEW, Nord'],['Электрокомпоненты','Siemens, Schneider']],
@@ -169,7 +170,7 @@ SC('SC300LB / SC300/300LB',1,'3000','48','250','3×15 кВт / 87 Гц','SAJ50-1
 SC('SC300M / SC300/300M',0,'3000','60','350','3×19–23 кВт / 87 Гц','SAJ50-1.4','VFD 75–90 кВт'),
 SC('SC300H / SC300/300H',0,'3000','75','450','3×26–32 кВт / 87 Гц','SAJ50-2.0','VFD 90–110 кВт')]},
 {kind:'ish',id:'ish',schema:'ind',title:'Промышленные подъёмники серии SC-ISH',subtitle:'Для особых условий: низкие температуры, влажность, жара, пыль, взрывозащита · Стандарты: EN 12159:2012, EN 81-20, EN 81-43',
-common:[['Стандарты','EN 12159:2012, EN 81-20, EN 81-43'],['Секции мачты','450×450, 650×200, 650×650 мм'],['Температура эксплуатации','−40…+50 °C'],['Взрывозащита (опция)','EX IIC T4'],['Интеллектуальное управление','Автоматическое выравнивание и поэтажная система'],['Пожарная защита','Кнопка возврата, огнетушитель, пожарная сигнализация'],['Связь','IP-телефония, локальная сеть, IoT']],
+common:[['Стандарты','EN 12159:2012, EN 81-20, EN 81-43'],['Секции мачты','450×450, 650×200, 650×650 мм'],['Температура эксплуатации','−40…+50 °C'],['Взрывозащита (опция)','EX IIC T4'],['Интеллектуальное управление','Автоматическое выравнивание и поэтажная система'],['Пожарная защита','Кнопка возврата, огнетушитель, пожарная сигнализация'],['Связь','IP-телефония, локальная сеть, IoT'],['Трёхсторонняя сертификация','В соответствии с местными требованиями']],
 models:[
 {m:'SC 50-ISH',load:'500 кг',speed:'30 м/мин',height:'250 м',car:'1,2×1,0 м',motor:'13 кВт'},
 {m:'SC 100-ISH',load:'1000 кг',speed:'30 м/мин',height:'250 м',car:'1,7×1,3 м',motor:'2×11 кВт'},
@@ -188,19 +189,19 @@ models:[
 {m:'MC S 200',load:'2000',cage:'1500×3000×1200',motor:'2×9,2',mast:'650×650'},
 {m:'MC T 300',load:'3000',cage:'3000×5000×1200',motor:'4×11',mast:'2×650×650'},
 {m:'MC T 500',load:'5000',cage:'3000×5000×1200',motor:'6×11',mast:'2×650×650'}]},
-{kind:'unload',id:'unload',schema:'unload',title:'Разгрузочные платформы XDLP / XDHP',subtitle:'Независимое вспомогательное оборудование для перемещения сыпучих материалов и оборудования между этажами · Нагрузка до 5000 кг',
-common:[['Монтажная длина','5500 мм'],['Высота монтажного пространства','2400–3800 мм (мод. 22–32) / 2400–3300 мм (мод. 36–42)'],['Боковые панели','Оцинкованный лист с окраской'],['Рама','Покраска или цинкование'],['Крепление','Опорными стойками или анкерами к перекрытию']],
+{kind:'unload',id:'unload',schema:'unload',title:'Разгрузочные платформы XDLP / XDHP',subtitle:'Независимое вспомогательное оборудование · Максимальная нагрузка до 5000 кг · Эффективное перемещение сыпучих материалов и оборудования между этажами',
+common:[['Максимальная нагрузка (серия)','5000 кг'],['Монтажная длина','5500 мм'],['Боковые панели','Оцинкованный лист с окраской'],['Рама','Покраска или цинкование'],['Крепление','Опорными стойками или анкерами к перекрытию'],['Коэффициент внешней нагрузки','4500 мм / 100%, 4750 мм / 80%, 5000 мм / 60%, 5250 мм / 50%']],
 models:[
-{m:'XDLP 22 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'2180',w2:'1650',ah:'400',wt:'2,0'},
-{m:'XDLP 28 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'2580',w2:'2050',ah:'400',wt:'2,2'},
-{m:'XDLP 32 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'3180',w2:'2650',ah:'400',wt:'2,5'},
-{m:'XDLP 36 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'3580',w2:'3030',ah:'500',wt:'3,0'},
-{m:'XDLP 42 (лёгкий тип)',type:'Лёгкий',load:'3000 кг',w1:'4180',w2:'3630',ah:'500',wt:'3,2'},
-{m:'XDHP 22 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'2180',w2:'1650',ah:'500',wt:'2,3'},
-{m:'XDHP 28 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'2580',w2:'2050',ah:'500',wt:'2,5'},
-{m:'XDHP 32 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'3180',w2:'2650',ah:'500',wt:'2,8'},
-{m:'XDHP 36 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'3580',w2:'3030',ah:'550',wt:'3,2'},
-{m:'XDHP 42 (тяжёлый тип)',type:'Тяжёлый',load:'5000 кг',w1:'4180',w2:'3630',ah:'550',wt:'3,6'}]},
+U('XDLP 22 (лёгкий тип)','Лёгкий','3000 кг','2180','1650','2110','2030','2400–3800','400','2,0'),
+U('XDLP 28 (лёгкий тип)','Лёгкий','3000 кг','2580','2050','2510','2430','2400–3800','400','2,2'),
+U('XDLP 32 (лёгкий тип)','Лёгкий','3000 кг','3180','2650','3110','3030','2400–3800','400','2,5'),
+U('XDLP 36 (лёгкий тип)','Лёгкий','3000 кг','3580','3030','3495','3405','2400–3300','500','3,0'),
+U('XDLP 42 (лёгкий тип)','Лёгкий','3000 кг','4180','3630','4095','4005','2400–3300','500','3,2'),
+U('XDHP 22 (тяжёлый тип)','Тяжёлый','5000 кг','2180','1650','2110','2030','2400–3800','500','2,3'),
+U('XDHP 28 (тяжёлый тип)','Тяжёлый','5000 кг','2580','2050','2510','2430','2400–3800','500','2,5'),
+U('XDHP 32 (тяжёлый тип)','Тяжёлый','5000 кг','3180','2650','3110','3030','2400–3800','500','2,8'),
+U('XDHP 36 (тяжёлый тип)','Тяжёлый','5000 кг','3580','3030','3495','3405','2400–3300','550','3,2'),
+U('XDHP 42 (тяжёлый тип)','Тяжёлый','5000 кг','4180','3630','4095','4005','2400–3300','550','3,6')]},
 {kind:'zlp',id:'zlp',schema:'susp',title:'Подвесные платформы серии ZLP',subtitle:'Для фасадных работ, очистки, окраски, монтажа, инспекции мостов, резервуаров и труб · Замена традиционных лесов',
 common:[['Материалы','Сталь с порошковой окраской / горячее цинкование / алюминиевый сплав'],['Подвесная система','Регулируемая / парапетные зажимы'],['Расстояние регулировки','A: 1,3–1,7 м / R: 0,6–1,2 м'],['Макс. высота подъёма','150 м'],['Электропитание','220/380/440 В, 50–60 Гц, 3 фазы / 1 фаза'],['Устройства безопасности','Аварийный стоп, ограничение скорости, защита от обрыва троса и перекоса, верхний ограничитель, ручной спуск']],
 models:[
@@ -220,13 +221,17 @@ function getChips(cat,mo){
     case 'unload': return [mo.load,'W1 '+mo.w1+' мм',mo.wt+' т'];
     case 'zlp': return [mo.specs[0][1], mo.specs[2][1], '150 м'];
   }
+  return [];
 }
 function buildSpecs(cat,mo){
   switch(cat.kind){
     case 'sc': return [['Модель (одна / две кабины)',mo.m],['Грузоподъёмность кабины',mo.load+' кг'],['Макс. скорость',mo.speed+' м/мин'],['Макс. высота подъёма',mo.height+' м'],['Приводной агрегат',mo.drive],['Предохранительное устройство',mo.safety],['Система управления',mo.ctrl]];
     case 'ish': return [['Грузоподъёмность',mo.load],['Скорость',mo.speed],['Макс. высота установки',mo.height],['Размер кабины',mo.car],['Мощность двигателя',mo.motor]];
     case 'trans': return [['Грузоподъёмность',mo.load+' кг'],['Скорость','24 м/мин'],['Макс. высота установки','150 м'],['Кабина (Ш×Д×В)',mo.cage+' мм'],['Мощность двигателя',mo.motor+' кВт'],['Мачта',mo.mast+' мм']];
-    default: return mo.specs;
+    case 'unload': return [['Тип нагрузки',mo.type],['Макс. равномерная нагрузка',mo.load],['Наружная ширина W1',mo.w1+' мм'],['Внутренняя ширина W2',mo.w2+' мм'],['Крепление к перекрытию W3',mo.w3+' мм'],['Расстояние между опорами W4',mo.w4+' мм'],['Высота монтажного пространства',mo.instH+' мм'],['Высота сборки',mo.ah+' мм'],['Собственный вес',mo.wt+' т']];
+    default:
+      if(mo.specs && mo.specs.length){return mo.specs;}
+      return [['Информация','Уточняйте у представителя']];
   }
 }
 var root=document.getElementById('catalog');
@@ -250,13 +255,18 @@ DATA.forEach(function(cat,ci){
 var overlay=document.getElementById('overlay'),mTitle=document.getElementById('mTitle'),mBody=document.getElementById('mBody');
 function rows(p){return p.map(function(r){return '<tr><th>'+r[0]+'</th><td>'+r[1]+'</td></tr>';}).join('');}
 function openModal(ci,mi){
-  var cat=DATA[ci],mo=cat.models[mi];
-  mTitle.textContent=mo.m;
-  var html='<table>'+rows(buildSpecs(cat,mo))+'</table>';
-  if(cat.common){html+='<h4>Общие характеристики серии</h4><table>'+rows(cat.common)+'</table>';}
-  mBody.innerHTML=html;
-  overlay.classList.add('open');
-  document.body.classList.add('lock');
+  try{
+    var cat=DATA[ci],mo=cat.models[mi];
+    mTitle.textContent=mo.m;
+    var html='<table>'+rows(buildSpecs(cat,mo))+'</table>';
+    if(cat.common){html+='<h4>Общие характеристики серии</h4><table>'+rows(cat.common)+'</table>';}
+    mBody.innerHTML=html;
+    overlay.classList.add('open');
+    document.body.classList.add('lock');
+  }catch(err){
+    alert('Не удалось открыть характеристики. Сообщите об этом представителю: +7 (423) 256-47-21');
+    console.error(err);
+  }
 }
 function closeModal(){overlay.classList.remove('open');document.body.classList.remove('lock');}
 document.addEventListener('click',function(e){
@@ -264,8 +274,8 @@ document.addEventListener('click',function(e){
   if(b){openModal(+b.getAttribute('data-c'),+b.getAttribute('data-m'));}
 });
 document.getElementById('mClose').addEventListener('click',closeModal);
-overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+overlay.addEventListener('click',function(e){if(e.target===overlay){closeModal();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();}});
 </script>
 </body>
 </html>
